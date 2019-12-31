@@ -1,25 +1,22 @@
 JHU Unofficial Thesis Readme
 ============================
-Author: R. Jacob Vogelstein
-Updated by Noah J. Cowan, March 1, 2010
-Updated by [Brian D. Weitzner](https://github.com/weitzner),
-April 29, 2014 as available at [GitHub](https://github.com/weitzner/jhu-thesis-template)
-Updated by [John Muschelli](https://github.com/muschellij2), January 29, 2016 and
-now uses a makefile as available [here](https://github.com/muschellij2/PhD_Thesis)
-Updated by [Leonardo Collado Torres](https://github.com/lcolladotor) on April 13, 2016
-as available at this [repo](https://github.com/weitzner/jhu-thesis-template)
+* Author: R. Jacob Vogelstein
+* Updated by Noah J. Cowan, March 1, 2010
+* Updated by [Brian D. Weitzner](https://github.com/weitzner), April 29, 2014 as available at [GitHub](https://github.com/weitzner/jhu-thesis-template)
+* Updated by [John Muschelli](https://github.com/muschellij2), January 29, 2016 and now uses a makefile as available [here](https://github.com/muschellij2/PhD_Thesis)
+Updated by [Leonardo Collado Torres](https://github.com/lcolladotor) on April 13, 2016 as available at this [repo](https://github.com/weitzner/jhu-thesis-template)
 
 
 # Background
 
-When I was writing my dissertation in 2010, I was peripherally aware of `LaTeX` but not so much that I felt like investing the time required to learn how to make a complex document with it, so I ultimately wrote my dissertation in `MS-Word` and compiled it in a very ugly and sloppy way into what was ultimately reduced to a single file called `old-dissertation.doc`, written in the old `MS-Word` document format (approx. 26 MB in size) before they were `\*.xml`-based.
+When I was writing my dissertation in 2010, I was peripherally aware of `LaTeX` but not so much that I felt like investing the time required to learn how to make a complex document with it, so I ultimately wrote my dissertation in `MS-Word` and compiled it in a very ugly and sloppy way into what was ultimately reduced to a single file called `old-dissertation.doc`, written in the old `MS-Word` document format (approx. 26 MB in size) before they were `*.xml`-based.
 
 ## My aims with this project were two-fold:
 
 1. to make a LaTeX conversion of my MS-Word dissertation produced in 2010, along with all the
    `LaTeX` bells and whistles of internal document links and references as well as integrated bookmarks in the final PDF file.
 
-2. to produce **the template I wish I had available to me when I was writing my dissertation** in 2010.
+2. to produce **the template I wish I had available to me when I was writing my dissertation** in 2010, a more or less complete minimal working example (mwe) of a JHU-compliant dissertation using `LaTeX` with all the required sections in the required order.
 
 This archive is intended to simplify the process of creating a thesis in `LaTeX` that complies with the JHU formatting requirements found
 [here](https://www.library.jhu.edu/library-services/electronic-theses-dissertations/formatting-requirements/).
@@ -72,15 +69,19 @@ of files required to produce the final document, mainly because I remember feeli
 overwhelmed by the apparent complexity of some `LaTeX` repos when I was trying
 to put my own dissertation together back in 2010. Bearing that in of mind, we have
 
-* `main.tex` – The root LaTeX file that contains the LaTeX preamble as well as "include" statements for each of your thesis chapters.
+* `mwe.tex` – The root LaTeX file that contains the LaTeX preamble as well as "include" statements for each of your thesis chapters.
 
-* `main.pdf` – A compiled version of the sample document.
+* `mwe.pdf` – A compiled version of the sample document.
 
 * `classics.bib` – A sample BibTeX file containing references to a number of classic scientific works.
 
-* `figures/` – directory for images
+* `figures/` – directory for figure images
 
 * `text/` – directory for content files
+
+* `jrc-dissertation.pdf` - the LaTeX version of John Clayton's 2010 dissertation (upon which the mwe was modeled)
+
+* `README.md` - this document
 
 # Figures
 
@@ -126,7 +127,7 @@ The line numbers were manually derived from `old-dissertation.tex` in `vim`
 
 # Changes from the Vogelstein/Weitzner/Muschelli/Collado Torres template
 
-* Added each `\*.tex` file split from `old-dissertation.tex` to `text/` directory
+* Added each `*.tex` file split from `old-dissertation.tex` to `text/` directory
 
 * These files were then integrated into the project and modified as necessary to compile
 
