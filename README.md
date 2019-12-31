@@ -1,109 +1,93 @@
 JHU Unofficial Thesis Readme
 ============================
-Author: R. Jacob Vogelstein <br>
-Updated by Noah J. Cowan, March 1, 2010 <br>
-Updated by [Brian D. Weitzner](https://github.com/weitzner), April 29, 2014 as available at [GitHub](https://github.com/weitzner/jhu-thesis-template) and as an [Overleaf template](https://www.overleaf.com/latex/templates/johns-hopkins-phd-dissertation-template/jmdrczzbrhyx#.Vw7LVhMrL64) as uploaded by Karla Hernandez (see how to support PDF/A files at the end of this README)<br>
-Updated by [John Muschelli](https://github.com/muschellij2), January 29, 2016 and now uses a makefile as available [here](https://github.com/muschellij2/PhD_Thesis) <br>
-Updated by [Leonardo Collado Torres](https://github.com/lcolladotor) on April 13, 2016 as available at this [repo](https://github.com/weitzner/jhu-thesis-template) or as an [Overleaf template](https://www.overleaf.com/latex/templates/johns-hopkins-university-unofficial-thesis-template/tqdzgmrxgbtg#.Vw-NrRMrJuU) (The template is missing [this small change](https://github.com/lcolladotor/jhu-thesis-template/commit/37f7151d3bb0ac1c5a487e5788fe6071bffc7d8b)).
-
-This archive is intended to simplify the process of creating a thesis
-in LaTeX that complies with the JHU formatting requirements found [here](http://guides.library.jhu.edu/etd/formatting).
-
-# Makefile version
-
-Muschelli added a `makefile` and `Rnw` files to his thesis. Collado Torres simply took Muschelli's thesis, made it into a template and submitted it to Overleaf. The rest of the README is as-is from the time Weitzner modified. To use this version you will have to modify the `main.tex` file and add chapters as necessary. Then you will have to update the `makefile` with the names of the new chapters. 
-
-If you want to reproduce the current `PhD_Thesis.pdf` file, simply run
-
-```sh
-make
-```
-
-To clean the files that you won't need, run
-
-```sh
-make clean
-```
-
-To open the PDF file run
-
-```sh
-make open
-```
-
-Finally to start editing `main.tex` run
-
-```sh
-make edit
-```
-
-The file `RJournal_nogeom.sty` is used to change the color of some links and other style changes.
-
-It might be best to simply clone this repository, start editing and committing your changes in case you want to rollback or remember why you changed something. 
-
-If you want to check a complete PhD Thesis see [John Muschelli's](https://github.com/muschellij2/PhD_Thesis). It contains more `LaTeX` tricks that you might need to use.
+Author: R. Jacob Vogelstein
+Updated by Noah J. Cowan, March 1, 2010
+Updated by [Brian D. Weitzner](https://github.com/weitzner),
+April 29, 2014 as available at [GitHub](https://github.com/weitzner/jhu-thesis-template)
+Updated by [John Muschelli](https://github.com/muschellij2), January 29, 2016 and
+now uses a makefile as available [here](https://github.com/muschellij2/PhD_Thesis)
+Updated by [Leonardo Collado Torres](https://github.com/lcolladotor) on April 13, 2016
+as available at this [repo](https://github.com/weitzner/jhu-thesis-template)
 
 
-## Use at Overleaf
+# Background
 
-If you don't want to install `LaTeX` simply use [Overleaf](https://www.overleaf.com/) or [ShareLaTeX](https://www.sharelatex.com/). You won't need the `makefile` in that case. 
+When I was writing my dissertation in 2010, I was peripherally aware of `LaTeX` but not so much that I felt like investing the time required to learn how to make a complex document with it, so I ultimately wrote my dissertation in `MS-Word` and compiled it in a very ugly and sloppy way into what was ultimately reduced to a single file called `old-dissertation.doc`, written in the old `MS-Word` document format (approx. 26 MB in size) before they were `\*.xml`-based.
 
-In particular, you might want to see this [read-only version at Overleaf](https://www.overleaf.com/read/tqdzgmrxgbtg). It doesn't have a `makefile` because they are currently not supported (see [this tweet](https://twitter.com/fellgernon/status/720360139233050624)). Also, the `Rnw` chapter is basically a regular chapter when using Overleaf since you have to create the `tex` file yourself using `knitr::knit()` and upload the resulting `tex` file and figures to Overleaf.
+## My aims with this project were two-fold:
 
-To go ahead and use this template in Overleaf, go to the [Overleaf template](https://www.overleaf.com/latex/templates/johns-hopkins-university-unofficial-thesis-template/tqdzgmrxgbtg#.Vw-NrRMrJuU) and click on _open as template_.
+1. to make a LaTeX conversion of my MS-Word dissertation produced in 2010, along with all the
+   `LaTeX` bells and whistles of internal document links and references as well as integrated bookmarks in the final PDF file.
 
-# Previous information
+2. to produce **the template I wish I had available to me when I was writing my dissertation** in 2010.
 
-The files described below are still available under the `unused_files` directory. Some of the previous information is still valid. You might be interested in using either the files last edited by [Brian D. Weitzner](https://github.com/weitzner) at [weitzner/jhu-thesis-template under commit d8ba0a](https://github.com/weitzner/jhu-thesis-template/tree/d8ba0a4c524a674258202b5338edd50249026443) or the original [JHU-Biostats template](http://www.biostat.jhsph.edu/research/thesis.shtml) included here as `unused_files/OLD_FORMAT.tex`.
+This archive is intended to simplify the process of creating a thesis in `LaTeX` that complies with the JHU formatting requirements found
+[here](https://www.library.jhu.edu/library-services/electronic-theses-dissertations/formatting-requirements/).
 
-## Quick Start
+# Quick Start
 
+1. Install `LaTeX` (with `latexmk`) and a decent editor (ideally emacs+AUCTeX+RefTeX
+   TeXShop for MacTex) on your computer.
 
-1. Install LaTeX and a decent editor (ideally emacs+AUCTeX+RefTeX) on
-your computer.
-
-2. To compile the included sample document, type "latex root".  If you want to test
-the references and everything, use the usual magic sequence of commands: 
+2. To compile the included sample document, type `latex main`.  If you want to
+   test the references and everything, use the usual magic sequence of commands:
 
 ```sh
-pdflatex root
-bibtex root
-pdflatex root
-pdflatex root
+pdflatex main
+bibtex main # or biber main
+pdflatex main
+pdflatex main
 ```
 Extra compiles may be needed for accurate TOC, List of Figures, etc.
 
-## What's Included?
+NOTE: The output produced by these files contains dummytext by default from the `lipsum` package provided in most `LaTeX` distributions.
 
+# `latexmk` version
 
-* `thesis.cls` – The TeX class file that contains many of the formatting commands.  
+I use the wonderful  `latexmk` (Version 4.65) program by by John Collins which can be obtained from [CTAN](http://www.ctan.org/pkg/latexmk) or from the [author\'s website](http://www.personal.psu.edu/jcc8/latexmk) to automate the process of compiling `\*.tex` files and cleaning up the unwanted files produced in the compilation process.
 
-* `jhu12.clo` – The 12pt font "class option" file that contains the specific formatting commands for a 12-point font JHU thesis document.
+I added a `bash` function to my `~/.aliases` dotfile of the form
 
-* `IEEEtran.bst` – A recent version (as of May 2007) of the BibTeX style file for formatting citations in the style used by IEEE Transactions journals.  
+```sh
+latex-make-and-clean () {
+  time latexmk -pdf -pdflatex='pdflatex -file-line-error -synctex=1' "$@" && latexmk -c
+  rm *.bbl pdfa.xmpi text/*.aux
+  }
+```
 
-* `thesis.bib` – A sample bibliography file in BibTeX format.
+which will run `pdflatex` and `bibtex` as many times as necessary to properly compile the file with references, TOC, appendices and so forth. Synctex is incorporated as well. Finally, the current directory and subdirectory `text/` are cleaned of superfluous files, while reporting the time elapsed at the end.
 
-* `root.tex` – The "root" LaTeX file that contains the LaTeX preamble as well as "include" statements for each of your thesis chapters.
+As single commands, this looks like
 
-* `chapter0.tex` – A sample chapter with some formatting/header options.
+```
+time latexmk -pdf -pdflatex='pdflatex -file-line-error -synctex=1' main
+latexmk -c
+rm *.bbl pdfa.xmpi text/*.aux
+```
 
-* `chapter1.tex` – Another sample chapter with some different formatting/header options.
+# What's Included?
 
-* `rjvheadshot.jpg` – A sample graphic with the right dimesions for the headshot used on the Vita page.
+I opted for a reductionist approach, aiming to minimize the number and type
+of files required to produce the final document, mainly because I remember feeling
+overwhelmed by the apparent complexity of some `LaTeX` repos when I was trying
+to put my own dissertation together back in 2010. Bearing that in of mind, we have
 
-* `root.pdf` – A compiled version of the sample document.
+* `main.tex` – The root LaTeX file that contains the LaTeX preamble as well as "include" statements for each of your thesis chapters.
 
-* `jhu10.clo` – **USE AT YOUR OWN RISK** – An old version of a 10pt font "class option" file that DOES NOT FULLY COMPLY with the JHU thesis formatting requirements, but is better than nothing if you want to use a smaller font.
+* `main.pdf` – A compiled version of the sample document.
 
-* `jhu11.clo` – **USE AT YOUR OWN RISK** – An old version of an 11pt font "class option" file that DOES NOT FULLY COMPLY with the JHU thesis formatting requirements, but is better than nothing if you want to use a smaller font.
+* `classics.bib` – A sample BibTeX file containing references to a number of classic scientific works.
 
-## Figures
+* `figures/` – directory for images
+
+* `text/` – directory for content files
+
+# Figures
 
 Figures should be generated as such:
 
 ```tex
-\begin{figure}[htbp]
+\begin{figure}[p]
   \centering
   \includegraphics[width=\columnwidth]{myfigure}
   \caption{My caption}
@@ -111,11 +95,53 @@ Figures should be generated as such:
 \end{figure}
 ```
 
-Where the figure `myfigure.EXT` can be located in the directory designated by the `\graphicspath` command in the `root.tex` file.
+Where the figure `myfigure.EXT` can be located in the directory designated by the `\graphicspath` command in the `main.tex` file.
 
 Note that no file extension is given in the `includegraphicx` command; this makes the code maximally portable for different graphics drivers. For `pdflatex`, there are many allowable extensions, including `.pdf` and `.jpg` among others. For plain latex, you generally have to use `.eps` files. But, if you hard-code the extension in your LaTeX code, then you will not be able to switch between latex and `pdflatex`.
 
-## Use at Overleaf
+# Overview of conversion workflow from MS-Word
 
-The version by [Brian D. Weitzner](https://github.com/weitzner) is available as an Overleaf template that Karla Hernandez uploaded. View it [here](https://www.overleaf.com/latex/templates/johns-hopkins-phd-dissertation-template/jmdrczzbrhyx#.Vw7LVhMrL64). Note that it does not include support for PDF/A files as of the version available on April 13, 2016. However, you can add PDF/A file support by following the instructions available [here](https://www.overleaf.com/latex/examples/creating-pdf-slash-a-and-pdf-slash-x-files/bbbycnbyqhnm#.Vw6_XBMrLm1).
+I started with `old-dissertation.doc`, an old 2009-ish `MS-Word` file (26MB or so) and converted it first to `old-dissertation.htm` (along with a directory of extracted images `figures`) with the native Word Version in which it was created. The resulting html file was converted to rich text with `textutil -convert rtf` and the resulting `old-dissertation.rtf` file was converted to a `LaTeX` file with the `rtf2latex2e` command line tool. Finally, the contents of `old-dissertation.tex` were split according to line number with sed, as in:
 
+```sh
+sed -n '47,94p' old-dissertation.tex > abstract.tex
+sed -n '97,121p' old-dissertation.tex > thesis-readers.tex
+sed -n '122,200p' old-dissertation.tex > preface.tex
+sed -n '201,441p' old-dissertation.tex > contents.tex
+sed -n '443,582p' old-dissertation.tex > list-of-figures.tex
+sed -n '584,599p' old-dissertation.tex > list-of-appendices.tex
+sed -n '601,1108p' old-dissertation.tex > chapter-1.tex
+sed -n '1110,1779p' old-dissertation.tex > chapter-2.tex
+sed -n '1781,2380p' old-dissertation.tex > chapter-3.tex
+sed -n '2382,2921p' old-dissertation.tex > chapter-4.tex
+sed -n '2923,3020p' old-dissertation.tex > general-discussions-conclusions.tex
+sed -n '3022,4122p' old-dissertation.tex > references.tex
+sed -n '4124,4523p' old-dissertation.tex > appendix-i.tex
+sed -n '4525,5010p' old-dissertation.tex > appendix-ii.tex
+sed -n '5012,10950p' old-dissertation.tex > appendix-iii.tex
+sed -n '10953,11342p' old-dissertation.tex > cv.tex
+sed -n '11344,11373p' old-dissertation.tex > biographical-sketch.tex
+```
+The line numbers were manually derived from `old-dissertation.tex` in `vim`
+
+# Changes from the Vogelstein/Weitzner/Muschelli/Collado Torres template
+
+* Added each `\*.tex` file split from `old-dissertation.tex` to `text/` directory
+
+* These files were then integrated into the project and modified as necessary to compile
+
+* Added `bib` file generated from the Mendeley reference manager and tweaked it as necessary
+
+* removed `rnw_chapter` directory
+
+* removed color profile
+
+* incorporated link color from RJournal_nogeom.sty
+
+* removed RJournal style file
+
+* adjusted title page to [JHU specifications](https://www.library.jhu.edu/library-services/electronic-theses-dissertations/formatting-requirements/)
+  based on example files and pointsize while removing most vspace calls in favor of adding space after forced line breaks
+  as a multiple of `baselineskip`.
+
+* incorporated thesis readers into `abstract.tex`
