@@ -3,7 +3,7 @@ Johns Hopkins University Compliant Dissertation (Minimal Working Example)
 
 # Background
 
-When I was writing my dissertation in 2010, I was peripherally aware of `LaTeX` but not so much that I felt like investing the time required to learn how to make a complex document with it, so I ultimately wrote my dissertation in `MS-Word` and compiled it in a very ugly and sloppy way into what was ultimately reduced to a single file called `old-dissertation.doc`, written in the old `MS-Word` document format (approx. 26 MB in size) before they were `*.xml`-based.
+When I was writing my dissertation in 2010, I was peripherally aware of `LaTeX` but not so much that I felt like investing the time required to learn how to make a complex document with it, so I ultimately wrote my dissertation in `MS-Word` and compiled it in a very ugly and sloppy way into what was ultimately reduced to a single file called `old-dissertation.doc`, written in the old `MS-Word` document format (approx. 26 MB in size) before they were XML-based.
 
 ## My aims with this project were two-fold:
 
@@ -18,14 +18,14 @@ This archive is intended to simplify the process of creating a dissertation usin
 
 1. Install a major `LaTeX` distribution such as `TeX Live`(multi-platform), `MiKTeX` (Windows) or `MacTeX` (Mac OS).
 
-2. To compile the included sample document, type `latex main`.  If you want to
+2. To compile the included sample document, type `latex mwe`.  If you want to
    test the references and everything, use the usual magic sequence of commands:
 
 ```sh
-pdflatex main
-bibtex main # or biber main
-pdflatex main
-pdflatex main
+pdflatex mwe
+biber mwe # or bibtex mwe
+pdflatex mwe
+pdflatex mwe
 ```
 Extra compiles may be needed for accurate TOC, List of Figures, etc.
 
@@ -44,12 +44,12 @@ latex-make-and-clean () {
   }
 ```
 
-which will run `pdflatex` and `bibtex` as many times as necessary to properly compile the file with references, TOC, appendices and so forth. Synctex is incorporated as well. Finally, the current directory and subdirectory `text/` are cleaned of superfluous files, while reporting the time elapsed at the end.
+which will run `pdflatex` and `biber` (or `bibtex`) as many times as necessary to properly compile the file with references, a table of contents, appendices and so forth. `Synctex` is incorporated as well. Finally, the current directory and subdirectory `text/` are cleaned of superfluous files, while reporting the time elapsed at the end.
 
 As single commands, this looks like
 
 ```
-time latexmk -pdf -pdflatex='pdflatex -file-line-error -synctex=1' main
+time latexmk -pdf -pdflatex='pdflatex -file-line-error -synctex=1' mwe
 latexmk -c
 rm *.bbl pdfa.xmpi text/*.aux
 ```
@@ -61,17 +61,17 @@ of files required to produce the final document, mainly because I remember feeli
 overwhelmed by the apparent complexity of some `LaTeX` repos when I was trying
 to put my own dissertation together back in 2010. Bearing that in of mind, we have
 
-* `mwe.tex` – The root LaTeX file that contains the LaTeX preamble as well as "include" statements for each of your thesis chapters.
+* `mwe.tex` – The root `LaTeX` file containing the `LaTeX` preamble as well as "include" statements for each section of the dissertation.
 
 * `mwe.pdf` – A compiled version of the sample document.
 
-* `classics.bib` – A sample BibTeX file containing references to a number of classic scientific works.
+* `classics.bib` – A sample `BibTeX` file containing references to a number of classic scientific works.
 
 * `figures/` – directory for figure images
 
 * `text/` – directory for content files
 
-* `jrc-dissertation.pdf` - the LaTeX version of John Clayton's 2010 dissertation (upon which the mwe was modeled)
+* `jrc-dissertation.pdf` - the `LaTeX` version of John Clayton's 2010 dissertation (upon which the mwe was modeled)
 
 * `README.md` - this document
 
@@ -88,7 +88,7 @@ Figures should be generated as such:
 \end{figure}
 ```
 
-Where the figure `myfigure.EXT` can be located in the directory designated by the `\graphicspath` command in the `main.tex` file.
+Where the figure `myfigure.EXT` can be located in the directory designated by the `\graphicspath` command in the `mwe.tex` file.
 
 Note that no file extension is given in the `includegraphicx` command; this makes the code maximally portable for different graphics drivers. For `pdflatex`, there are many allowable extensions, including `.pdf` and `.jpg` among others. For plain `LaTeX`, you generally have to use `.eps` files. But, if you hard-code the extension in your `LaTeX` code, then you will not be able to switch between latex and `pdflatex`.
 
@@ -120,7 +120,7 @@ The line numbers were manually derived from `old-dissertation.tex` in `vim`
 # Major changes from the previous template
 
 * Added each `*.tex` file split from `old-dissertation.tex` to `text/` directory
-`
+
 * These files were then integrated into the project and modified as necessary to compile
 
 * Added `bib` file generated from the `Mendeley` reference manager and tweaked it as necessary
