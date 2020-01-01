@@ -16,7 +16,7 @@ This archive is intended to simplify the process of creating a dissertation usin
 
 # Quick Start
 
-1. Install `LaTeX` (with `latexmk`) and a decent editor (such as `emacs`+`AUCTeX`+`RefTeX` or `TeXShop` for MacTex) on your computer.
+1. Install a major `LaTeX` distribution such as `TeX Live`(multi-platform), `MiKTeX` (Windows) or `MacTeX` (Mac OS).
 
 2. To compile the included sample document, type `latex main`.  If you want to
    test the references and everything, use the usual magic sequence of commands:
