@@ -1,4 +1,5 @@
-Johns Hopkins University Compliant Dissertation (Minimal Working Example)
+Johns Hopkins University Compliant Dissertation
+(Minimal Working Example)
 ============================
 
 # Background
