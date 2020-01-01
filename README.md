@@ -1,5 +1,5 @@
 Johns Hopkins University Compliant Dissertation  
-(Minimal Working Example using `LaTeX`)
+Minimal Working Example using `LaTeX`
 ==========
 
 # Background
