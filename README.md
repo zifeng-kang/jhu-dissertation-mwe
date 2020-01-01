@@ -94,7 +94,7 @@ Note that no file extension is given in the `includegraphicx` command; this make
 
 # Overview of document conversion workflow from MS-Word
 
-I started with `old-dissertation.doc`, an old 2009-ish `MS-Word` file (26MB or so) and converted it first to `old-dissertation.htm` (along with a directory of extracted images `figures`) with the native Word Version in which it was created. The resulting html file was converted to rich text with `textutil -convert rtf` and the resulting `old-dissertation.rtf` file was converted to a `LaTeX` file with the `rtf2latex2e` command line tool. Finally, the contents of `old-dissertation.tex` were split according to line number with sed, as in:
+I started with `old-dissertation.doc`, an old 2009-ish `MS-Word` file (26MB or so) and converted it first to `old-dissertation.htm` (along with a directory of extracted images `figures`) with the native Word Version in which it was created. The resulting `html` file was converted to rich text with `textutil -convert rtf` and the resulting `old-dissertation.rtf` file was converted to a `LaTeX` file with the `rtf2latex2e` command line tool. Finally, the contents of `old-dissertation.tex` were split according to line number with sed, as in:
 
 ```sh
 sed -n '47,94p' old-dissertation.tex > abstract.tex
@@ -120,7 +120,7 @@ The line numbers were manually derived from `old-dissertation.tex` in `vim`
 # Major changes from the previous template
 
 * Added each `*.tex` file split from `old-dissertation.tex` to `text/` directory
-
+`
 * These files were then integrated into the project and modified as necessary to compile
 
 * Added `bib` file generated from the `Mendeley` reference manager and tweaked it as necessary
@@ -134,7 +134,7 @@ The line numbers were manually derived from `old-dissertation.tex` in `vim`
 * removed RJournal style file
 
 * adjusted title page to [JHU specifications](https://www.library.jhu.edu/library-services/electronic-theses-dissertations/formatting-requirements/)
-  based on example files and pointsize while removing most vspace calls in favor of adding space after forced line breaks
+  based on example files and pointsize while removing most `vspace` calls in favor of adding space after forced line breaks
   as a multiple of `baselineskip`.
 
 * incorporated thesis readers into `abstract.tex`
