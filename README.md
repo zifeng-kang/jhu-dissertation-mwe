@@ -17,7 +17,7 @@ This archive is intended to simplify the process of creating a dissertation usin
 
 # Quick Start
 
-1. Install a major `LaTeX` distribution such as `TeX Live`(multi-platform), `MiKTeX` (Windows) or `MacTeX` (Mac OS).
+1. Install a major `LaTeX` distribution such as `TeX Live` (multi-platform), `MiKTeX` (Windows) or `MacTeX` (Mac OS).
 
 2. To compile the included sample document, type `latex mwe`.  If you want to
    test the references and everything, use the usual magic sequence of commands:
@@ -34,7 +34,7 @@ NOTE: The output produced by these files contains dummytext by default from the 
 
 # `latexmk` version
 
-I use the outstanding  `latexmk` (Version 4.65) program by by John Collins which can be obtained from [CTAN](http://www.ctan.org/pkg/latexmk) or from the [author's website](http://www.personal.psu.edu/jcc8/latexmk) to automate the process of compiling `*.tex` files and cleaning up the unwanted files produced in the compilation process.
+I use the outstanding  `latexmk` (Version 4.65) program by by John Collins which can be obtained from [CTAN](http://www.ctan.org/pkg/latexmk) or from the [author's website](http://www.personal.psu.edu/jcc8/latexmk) to automate the process of compiling `.tex` files and cleaning up the unwanted files produced in the compilation process.
 
 I added a `bash` function to my `~/.aliases` dotfile of the form
 
@@ -93,9 +93,9 @@ Where the figure `myfigure.EXT` can be located in the directory designated by th
 
 Note that no file extension is given in the `includegraphicx` command; this makes the code maximally portable for different graphics drivers. For `pdflatex`, there are many allowable extensions, including `.pdf` and `.jpg` among others. For plain `LaTeX`, you generally have to use `.eps` files. But, if you hard-code the extension in your `LaTeX` code, then you will not be able to switch between latex and `pdflatex`.
 
-# Overview of document conversion workflow from MS-Word
+# Overview of document conversion workflow from `MS-Word`
 
-I started with `old-dissertation.doc`, an old 2009-ish `MS-Word` file (26MB or so) and converted it first to `old-dissertation.htm` (along with a directory of extracted images `figures`) with the native Word Version in which it was created. The resulting `html` file was converted to rich text with `textutil -convert rtf` and the resulting `old-dissertation.rtf` file was converted to a `LaTeX` file with the `rtf2latex2e` command line tool. Finally, the contents of `old-dissertation.tex` were split according to line number with sed, as in:
+I started with `old-dissertation.doc`, an old 2009-ish `MS-Word` file (26MB or so) and converted it first to `old-dissertation.htm` (along with a directory of extracted images `figures`) with the native Word Version in which it was created. The resulting `html` file was converted to rich text with `textutil -convert rtf` and the resulting `old-dissertation.rtf` file was converted to a `LaTeX` file with the `rtf2latex2e` command line tool. Finally, the contents of `old-dissertation.tex` were split according to line number with `sed`, as in:
 
 ```sh
 sed -n '47,94p' old-dissertation.tex > abstract.tex
@@ -120,11 +120,11 @@ The line numbers were manually derived from `old-dissertation.tex` in `vim`
 
 # Major changes from the previous template
 
-* Added each `*.tex` file split from `old-dissertation.tex` to `text/` directory
+* Added each `.tex` file split from `old-dissertation.tex` to `text/` directory
 
 * These files were then integrated into the project and modified as necessary to compile
 
-* Added `bib` file generated from the `Mendeley` reference manager and tweaked it as necessary
+* Added `bib` file generated from the `BibDesk` reference manager and tweaked as necessary
 
 * removed `rnw_chapter` directory
 
@@ -142,9 +142,10 @@ The line numbers were manually derived from `old-dissertation.tex` in `vim`
 
 # Project Version History
 
-* Created by: R. Jacob Vogelstein
-* Updated by Noah J. Cowan, March 1, 2010
-* Updated by [Brian D. Weitzner](https://github.com/weitzner), April 29, 2014 as available at [GitHub](https://github.com/weitzner/jhu-thesis-template)
-* Updated by [John Muschelli](https://github.com/muschellij2), January 29, 2016 and now uses a makefile as available [here](https://github.com/muschellij2/PhD_Thesis)
+* Updated by Chuanfa Guo on October 26, 1998
+* Report class template created by [R. Jacob Vogelstein](https://www.linkedin.com/in/r-jacob-vogelstein-65821b4/) in May, 2007
+* Updated by [Noah J. Cowan](https://limbs.lcsr.jhu.edu/people/cowan/) on March 1, 2010
+* Updated by [Brian D. Weitzner](https://github.com/weitzner) on April 29, 2014 as available at [GitHub](https://github.com/weitzner/jhu-thesis-template)
+* Updated by [John Muschelli](https://github.com/muschellij2) on January 29, 2016 and now uses a makefile as available [here](https://github.com/muschellij2/PhD_Thesis)
 * Updated by [Leonardo Collado Torres](https://github.com/lcolladotor) on April 13, 2016 as available at this [repo](https://github.com/weitzner/jhu-thesis-template)
-* Forked by [John Clayton](http://github.com/jrclayton) in December, 2019.
+* Forked by [John Clayton](http://github.com/jrclayton) in December, 2019 as available at this [repo](https://github.com/jrclayton/jhu-dissertation-mwe) 
