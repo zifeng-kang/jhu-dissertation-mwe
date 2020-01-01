@@ -1,11 +1,5 @@
-JHU Unofficial Thesis Readme
+Johns Hopkins University Compliant Dissertation (Minimal Working Example)
 ============================
-* Author: R. Jacob Vogelstein
-* Updated by Noah J. Cowan, March 1, 2010
-* Updated by [Brian D. Weitzner](https://github.com/weitzner), April 29, 2014 as available at [GitHub](https://github.com/weitzner/jhu-thesis-template)
-* Updated by [John Muschelli](https://github.com/muschellij2), January 29, 2016 and now uses a makefile as available [here](https://github.com/muschellij2/PhD_Thesis)
-Updated by [Leonardo Collado Torres](https://github.com/lcolladotor) on April 13, 2016 as available at this [repo](https://github.com/weitzner/jhu-thesis-template)
-
 
 # Background
 
@@ -13,18 +7,16 @@ When I was writing my dissertation in 2010, I was peripherally aware of `LaTeX` 
 
 ## My aims with this project were two-fold:
 
-1. to make a LaTeX conversion of my MS-Word dissertation produced in 2010, along with all the
-   `LaTeX` bells and whistles of internal document links and references as well as integrated bookmarks in the final PDF file.
+1. to make a `LaTeX` conversion of my `MS-Word` dissertation produced in 2010, along with all the `LaTeX` bells and whistles of internal document links and references as well as integrated bookmarks in the final PDF file.
 
 2. to produce **the template I wish I had available to me when I was writing my dissertation** in 2010, a more or less complete minimal working example (mwe) of a JHU-compliant dissertation using `LaTeX` with all the required sections in the required order.
 
-This archive is intended to simplify the process of creating a thesis in `LaTeX` that complies with the JHU formatting requirements found
+This archive is intended to simplify the process of creating a dissertation using `LaTeX` that complies with the JHU formatting requirements found
 [here](https://www.library.jhu.edu/library-services/electronic-theses-dissertations/formatting-requirements/).
 
 # Quick Start
 
-1. Install `LaTeX` (with `latexmk`) and a decent editor (ideally emacs+AUCTeX+RefTeX
-   TeXShop for MacTex) on your computer.
+1. Install `LaTeX` (with `latexmk`) and a decent editor (such as `emacs`+`AUCTeX`+`RefTeX` or `TeXShop` for MacTex) on your computer.
 
 2. To compile the included sample document, type `latex main`.  If you want to
    test the references and everything, use the usual magic sequence of commands:
@@ -41,7 +33,7 @@ NOTE: The output produced by these files contains dummytext by default from the 
 
 # `latexmk` version
 
-I use the wonderful  `latexmk` (Version 4.65) program by by John Collins which can be obtained from [CTAN](http://www.ctan.org/pkg/latexmk) or from the [author\'s website](http://www.personal.psu.edu/jcc8/latexmk) to automate the process of compiling `\*.tex` files and cleaning up the unwanted files produced in the compilation process.
+I use the outstanding  `latexmk` (Version 4.65) program by by John Collins which can be obtained from [CTAN](http://www.ctan.org/pkg/latexmk) or from the [author's website](http://www.personal.psu.edu/jcc8/latexmk) to automate the process of compiling `*.tex` files and cleaning up the unwanted files produced in the compilation process.
 
 I added a `bash` function to my `~/.aliases` dotfile of the form
 
@@ -98,9 +90,9 @@ Figures should be generated as such:
 
 Where the figure `myfigure.EXT` can be located in the directory designated by the `\graphicspath` command in the `main.tex` file.
 
-Note that no file extension is given in the `includegraphicx` command; this makes the code maximally portable for different graphics drivers. For `pdflatex`, there are many allowable extensions, including `.pdf` and `.jpg` among others. For plain latex, you generally have to use `.eps` files. But, if you hard-code the extension in your LaTeX code, then you will not be able to switch between latex and `pdflatex`.
+Note that no file extension is given in the `includegraphicx` command; this makes the code maximally portable for different graphics drivers. For `pdflatex`, there are many allowable extensions, including `.pdf` and `.jpg` among others. For plain `LaTeX`, you generally have to use `.eps` files. But, if you hard-code the extension in your `LaTeX` code, then you will not be able to switch between latex and `pdflatex`.
 
-# Overview of conversion workflow from MS-Word
+# Overview of document conversion workflow from MS-Word
 
 I started with `old-dissertation.doc`, an old 2009-ish `MS-Word` file (26MB or so) and converted it first to `old-dissertation.htm` (along with a directory of extracted images `figures`) with the native Word Version in which it was created. The resulting html file was converted to rich text with `textutil -convert rtf` and the resulting `old-dissertation.rtf` file was converted to a `LaTeX` file with the `rtf2latex2e` command line tool. Finally, the contents of `old-dissertation.tex` were split according to line number with sed, as in:
 
@@ -125,13 +117,13 @@ sed -n '11344,11373p' old-dissertation.tex > biographical-sketch.tex
 ```
 The line numbers were manually derived from `old-dissertation.tex` in `vim`
 
-# Changes from the Vogelstein/Weitzner/Muschelli/Collado Torres template
+# Major changes from the previous template
 
 * Added each `*.tex` file split from `old-dissertation.tex` to `text/` directory
 
 * These files were then integrated into the project and modified as necessary to compile
 
-* Added `bib` file generated from the Mendeley reference manager and tweaked it as necessary
+* Added `bib` file generated from the `Mendeley` reference manager and tweaked it as necessary
 
 * removed `rnw_chapter` directory
 
@@ -146,3 +138,12 @@ The line numbers were manually derived from `old-dissertation.tex` in `vim`
   as a multiple of `baselineskip`.
 
 * incorporated thesis readers into `abstract.tex`
+
+# Project Version History
+
+* Created by: R. Jacob Vogelstein
+* Updated by Noah J. Cowan, March 1, 2010
+* Updated by [Brian D. Weitzner](https://github.com/weitzner), April 29, 2014 as available at [GitHub](https://github.com/weitzner/jhu-thesis-template)
+* Updated by [John Muschelli](https://github.com/muschellij2), January 29, 2016 and now uses a makefile as available [here](https://github.com/muschellij2/PhD_Thesis)
+* Updated by [Leonardo Collado Torres](https://github.com/lcolladotor) on April 13, 2016 as available at this [repo](https://github.com/weitzner/jhu-thesis-template)
+* Forked by [John Clayton](http://github.com/jrclayton) in December, 2019.
