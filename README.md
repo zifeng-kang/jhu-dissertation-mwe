@@ -139,7 +139,7 @@ The line numbers were manually derived from `old-dissertation.tex` in `vim`
 
 # JHU `LaTeX` dissertation template version history
 
-* The original `thesis.cls` class file was authored by Ian Goh (in 1999, based on the `.clo` files) and primarily based on the `UCTHESIS` document class for LaTeX version 2e by [Blaise B. Frederick](https://www.mcleanhospital.org/profile/blaise-frederick) from November 3, 1994
+* The original `thesis.cls` class file was authored by Ian Goh (in 1999, based on the `.clo` files) and primarily based on the `UCTHESIS` document class for LaTeX version 2e by [Blaise B. Frederick](https://www.mcleanhospital.org/profile/blaise-frederick) and [Ethan Munson](https://uwm.edu/engineering/people/munson-ph-d-ethan/) from 1994 
 * `format.tex` was created independently of `thesis.cls` by Chuanfa Guo in the Biostatistics department of JHPSH on October 26, 1998
 * The `thesis.cls` class file for JHU was updated by Matt Clapp on November 11, 2005
 * The report-class based template was created by [R. Jacob Vogelstein](https://www.linkedin.com/in/r-jacob-vogelstein-65821b4/) in May, 2007
