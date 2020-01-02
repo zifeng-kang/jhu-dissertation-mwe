@@ -19,8 +19,7 @@ This archive is intended to simplify the process of creating a dissertation usin
 
 1. Install a major `LaTeX` distribution such as `TeX Live` (multi-platform), `MiKTeX` (Windows) or `MacTeX` (Mac OS).
 
-2. To compile the included sample document, type `latex mwe`.  If you want to
-   test the references and everything, use the usual magic sequence of commands:
+2. To compile the included sample document, type `latex mwe`.  If you want to test the references and everything, use the usual magic sequence of commands:
 
 ```sh
 pdflatex mwe
@@ -134,16 +133,15 @@ The line numbers were manually derived from `old-dissertation.tex` in `vim`
 
 * removed RJournal style file
 
-* adjusted title page to [JHU specifications](https://www.library.jhu.edu/library-services/electronic-theses-dissertations/formatting-requirements/)
-  based on example files and pointsize while removing most `vspace` calls in favor of adding space after forced line breaks
-  as a multiple of `baselineskip`.
+* adjusted title page to [JHU specifications](https://www.library.jhu.edu/library-services/electronic-theses-dissertations/formatting-requirements/) based on example files and pointsize while removing most `vspace` calls in favor of adding space after forced line breaks as a multiple of `baselineskip`.
 
 * incorporated thesis readers into `abstract.tex`
 
 # JHU `LaTeX` dissertation template version history
 
-* `format.tex` was created by Chuanfa Guo on October 26, 1998
-* `thesis.cls` class file for JHU was created by Ian Goh on November 11, 2005
+* `thesis.cls` was created by Ian Goh (in 1999?) and primarily based on the `UCTHESIS` document class for LaTeX version 2e by [Blaise B. Frederick](https://www.mcleanhospital.org/profile/blaise-frederick) at [bbfrederick@mclean.harvard.edu](bbfrederick@mclean.harvard.edu) from November 3, 1994
+* `format.tex` was created independently of `thesis.cls` by Chuanfa Guo in the Biostatistics department of JHPSH on October 26, 1998
+* The `thesis.cls` class file for JHU was updated by Matt Clapp on November 11, 2005
 * The report class based template was created by [R. Jacob Vogelstein](https://www.linkedin.com/in/r-jacob-vogelstein-65821b4/) in May, 2007
   * Updated by [Noah J. Cowan](https://limbs.lcsr.jhu.edu/people/cowan/) on March 1, 2010
   * Updated by [Brian D. Weitzner](https://github.com/weitzner) on April 29, 2014 as available at [GitHub](https://github.com/weitzner/jhu-thesis-template)
