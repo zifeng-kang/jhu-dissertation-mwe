@@ -4,7 +4,7 @@ Minimal working example using `LaTeX`
 
 # Background
 
-When I was writing my dissertation in 2010, I was peripherally aware of `LaTeX` but not so much that I felt like investing the time required to learn how to make a complex document with it, so I ultimately wrote my dissertation in `MS-Word` and compiled it in a very ugly and sloppy way into what was ultimately reduced to a single file called `old-dissertation.doc`, written in the old `MS-Word` document format (approx. 26 MB in size) before they were XML-based.
+When I was writing my dissertation in 2010, I was peripherally aware of `LaTeX` but not so much that I felt like investing the time required to learn how to make a complex document with it, so I ultimately wrote my dissertation in `MS-Word` and compiled it in a very ugly and sloppy way into what was ultimately reduced to a single file called `old-dissertation.doc`, written in the old `MS-Word` document format before they were XML-based.
 
 ## My aims with this project were two-fold:
 
