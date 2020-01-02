@@ -140,12 +140,13 @@ The line numbers were manually derived from `old-dissertation.tex` in `vim`
 
 * incorporated thesis readers into `abstract.tex`
 
-# Project Version History
+# JHU `LaTeX` dissertation template version history
 
-* Updated by Chuanfa Guo on October 26, 1998
-* Report class template created by [R. Jacob Vogelstein](https://www.linkedin.com/in/r-jacob-vogelstein-65821b4/) in May, 2007
-* Updated by [Noah J. Cowan](https://limbs.lcsr.jhu.edu/people/cowan/) on March 1, 2010
-* Updated by [Brian D. Weitzner](https://github.com/weitzner) on April 29, 2014 as available at [GitHub](https://github.com/weitzner/jhu-thesis-template)
-* Updated by [John Muschelli](https://github.com/muschellij2) on January 29, 2016 and now uses a makefile as available [here](https://github.com/muschellij2/PhD_Thesis)
-* Updated by [Leonardo Collado Torres](https://github.com/lcolladotor) on April 13, 2016 as available at this [repo](https://github.com/weitzner/jhu-thesis-template)
-* Forked by [John Clayton](http://github.com/jrclayton) in December, 2019 as available at this [repo](https://github.com/jrclayton/jhu-dissertation-mwe) 
+* `format.tex` was created by Chuanfa Guo on October 26, 1998
+* `thesis.cls` class file for JHU was created by Ian Goh on November 11, 2005
+* The report class based template was created by [R. Jacob Vogelstein](https://www.linkedin.com/in/r-jacob-vogelstein-65821b4/) in May, 2007
+  * Updated by [Noah J. Cowan](https://limbs.lcsr.jhu.edu/people/cowan/) on March 1, 2010
+  * Updated by [Brian D. Weitzner](https://github.com/weitzner) on April 29, 2014 as available at [GitHub](https://github.com/weitzner/jhu-thesis-template)
+  * Updated by [John Muschelli](https://github.com/muschellij2) on January 29, 2016 and now uses a makefile as available [here](https://github.com/muschellij2/PhD_Thesis)
+  * Updated by [Leonardo Collado Torres](https://github.com/lcolladotor) on April 13, 2016 as available at this [repo](https://github.com/weitzner/jhu-thesis-template)
+  * Forked by [John Clayton](http://github.com/jrclayton) in December, 2019 as available at this [repo](https://github.com/jrclayton/jhu-dissertation-mwe) 
