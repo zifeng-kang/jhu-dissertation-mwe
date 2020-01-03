@@ -87,9 +87,11 @@
    urlcolor=link
 }
 
-% Dark blue color for all links
+% Color handling
 \usepackage{xcolor}
 %\usepackage{color}
+
+% Color for links
 \definecolor{link}{rgb}{0.45,0.51,0.67}
 
 %%% Table of Contents %%%
@@ -116,19 +118,19 @@
 %\usepackage{sectsty}
 %\chapterfont{\centering}
 
-% Removes 'Chapter #' chapter title while keeping
+% Removes 'Chapter #' title while keeping
 % it listed in the TOC
 \newcommand\chap[1]{%
   \chapter*{#1}%
   \addcontentsline{toc}{chapter}{#1}}
 
-% Removes 'Section #' chapter title while keeping
+% Removes 'Section #' title while keeping
 % it listed in the TOC
 \newcommand\sect[1]{%
   \section*{#1}%
   \addcontentsline{toc}{section}{#1}}
 
-% Removes 'Subsection #' chapter title while keeping
+% Removes 'Subsection #'title while keeping
 % it listed in the TOC
 \newcommand\subsect[1]{%
   \subsection*{#1}%
@@ -227,11 +229,11 @@ natbib = true
 \addbibresource{classics.bib}
 
 % If you want to exclude some portions from the bibliography
-\AtEveryBibitem{
+%\AtEveryBibitem{
 %\clearfield{issn}
 %\clearfield{note}
 %\clearfield{month}
-}
+%}
 
 % Change bib font size
 \renewcommand{\bibfont}{\small}
@@ -340,7 +342,9 @@ natbib = true
 %\printbibliography[title={References}]
 %\end{refsection}
 %
-% BIBLATEX BIBLIOGRAPHY
+%%%%% BACK MATTER %%%%%
+%
+%%% BIBLATEX BIBLIOGRAPHY %%%
 %\footnotesize
 \printbibliography[title={References},heading=bibintoc]
 %
@@ -355,7 +359,7 @@ natbib = true
 %\footnotesize\bibliography{IEEEabrv,classics}
 %\bibliography{IEEEabrv,classics}
 %
-%%% Appendices %%%
+% APPENDICES
 \begin{appendices}
 % Appendix I
 \include{text/12-appendix-i}

@@ -4,20 +4,18 @@ Minimal working example using `LaTeX`
 
 # Background
 
-When I was writing my dissertation in 2010, I was peripherally aware of `LaTeX` but not so much that I felt like investing the time required to learn how to make a complex document with it, so I ultimately wrote my dissertation in `MS-Word` and compiled it in a very ugly and sloppy way into what was ultimately reduced to a single file called `old-dissertation.doc`, written in the old `MS-Word` document format before they were XML-based.
-
-## My aims with this project were two-fold:
-
-1. to make a `LaTeX` conversion of my `MS-Word` dissertation produced in 2010, along with all the `LaTeX` bells and whistles of internal document links and references as well as integrated bookmarks in the final PDF file.
-
-2. to produce **the template I wish I had available to me when I was writing my dissertation** in 2010, a more or less complete minimal working example (mwe) of a JHU-compliant dissertation using `LaTeX` with all the required sections in the required order.
-
-This archive is intended to simplify the process of creating a dissertation using `LaTeX` that complies with the JHU formatting requirements found
+When I was writing my dissertation back in 2010, I was peripherally aware of `LaTeX` but not so much that I felt like investing the time required to learn how to make a complex document with it, so I ultimately wrote my dissertation in `MS-Word` and compiled it in a very ugly and sloppy way into what was ultimately reduced to a single file called `old-dissertation.doc`, written in the old `MS-Word` document format before they were XML-based. This archive is intended to simplify the process of creating a dissertation using `LaTeX` that complies with the JHU formatting requirements found
 [here](https://www.library.jhu.edu/library-services/electronic-theses-dissertations/formatting-requirements/).
+
+## Project aims:
+
+1. to make a `LaTeX` conversion of my `MS-Word` dissertation (produced in 2010), along with all the `LaTeX` bells and whistles of internal document links and references as well as integrated bookmarks in the final PDF file.
+
+2. to produce **the template I wish I had available to me when I was writing my dissertation** back in 2010; a more or less complete minimal working example (mwe) of a JHU-compliant dissertation using `LaTeX` with all the required parts in the required order.
 
 # Quick Start
 
-1. Install a major `LaTeX` distribution such as `TeX Live` (multi-platform), `MiKTeX` (Windows) or `MacTeX` (Mac OS).
+1. Install a major `LaTeX` distribution such as `TeX Live` (multi-platform), `MiKTeX` (Windows) or `MacTeX` (Mac OS). The output produced by these files contains dummytext by default from the `lipsum` package provided in most `LaTeX` distributions.
 
 2. To compile the included sample document, type `latex mwe`.  If you want to test the references and everything, use the usual magic sequence of commands:
 
@@ -27,15 +25,13 @@ biber mwe # or bibtex mwe
 pdflatex mwe
 pdflatex mwe
 ```
-Extra compiles may be needed for accurate TOC, List of Figures, etc.
-
-NOTE: The output produced by these files contains dummytext by default from the `lipsum` package provided in most `LaTeX` distributions.
+Extra compiles may be needed for and accurate Table of Contents, List of Figures, etc.
 
 # `latexmk` version
 
 I use the outstanding  `latexmk` (Version 4.65) program by by John Collins which can be obtained from [CTAN](http://www.ctan.org/pkg/latexmk) or from the [author's website](http://www.personal.psu.edu/jcc8/latexmk) to automate the process of compiling `.tex` files and cleaning up the unwanted files produced in the compilation process.
 
-I added a `bash` function to my `~/.aliases` dotfile of the form
+I added a `bash` function to my `~/.bash_profile` dotfile of the form
 
 ```sh
 latex-make-and-clean () {
@@ -56,22 +52,19 @@ rm *.bbl pdfa.xmpi text/*.aux
 
 # What's Included?
 
-I opted for a reductionist approach, aiming to minimize the number and type
-of files required to produce the final document, mainly because I remember feeling
-overwhelmed by the apparent complexity of some `LaTeX` repos when I was trying
-to put my own dissertation together back in 2010. Bearing that in of mind, we have
+I opted for a reductionist approach, seeking to minimize the number and type of files required to produce a document of the desired complexity that compiles without modification, mainly because I remember feeling overwhelmed by the apparent complexity of some `LaTeX` repos I came across when I was trying to put my own dissertation together. Bearing that in of mind, we have
 
-* `mwe.tex` – The root `LaTeX` file containing the `LaTeX` preamble as well as "include" statements for each section of the dissertation.
+* `mwe.tex` – The root `LaTeX` file containing the `LaTeX` preamble as well as the "include" statements for each part of the dissertation
 
-* `mwe.pdf` – A compiled version of the sample document.
+* `mwe.pdf` – A compiled version of the sample document
 
-* `classics.bib` – A sample `BibTeX` file containing references to a number of classic scientific works.
+* `classics.bib` – A sample `BibTeX` file containing references to a number of classic scientific works
 
 * `figures/` – directory for figure images
 
 * `text/` – directory for content files
 
-* `jrc-dissertation.pdf` - the `LaTeX` version of John Clayton's 2010 dissertation (upon which the mwe was modeled)
+* `jrc-dissertation.pdf` - the `LaTeX` version of John Clayton's dissertation (upon which the mwe was modeled)
 
 * `README.md` - this document
 
